@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>College Meme Generator</title>
+    <style>
+      @font-face {
+      font-family: 'mainFont';
+      src: url('fonts.ttf');
+      }
+      #working-image {
+        display: none;
+      }
+      html body {
+        font-family: "mainFont"
+      }
+      canvas { font-family: 'mainFont'; }
+      h2 {
+        text-align: center;
+        font-size: 4.5em;
+      }
+      .description {
+        margin-left:
+      }
+      .button {
+        display: block;
+        margin: auto;
+        text-align: center;
+       border-top: 1px solid #96d1f8;
+       background: #65a9d7;
+       padding: 9.5px 19px;
+       -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+       border-radius: 8px;
+       color: white;
+       font-size: 14px;
+       font-family: Georgia, serif;
+       text-decoration: none;
+       vertical-align: middle;
+       }
+    .button:hover {
+       border-top-color: #28597a;
+       background: #28597a;
+       color: #ccc;
+       }
+    .button:active {
+       border-top-color: #1b435e;
+       background: #1b435e;
+       }
+       .row {
+         width: 100%;
+       }
+       .settings p {
+         display: block;
+         text-align: center;
+         margin: auto;
+       }
+       .settings textarea {
+         width:400px;
+         height: 50px;
+         margin-top: 50px;
+       }
+       #image-input {
+         display: block;
+         text-align: center;
+         margin: 2em auto;
+       }
+    </style>
+  </head>
+
+  <body>
+
+    <img id="working-image" src="default.png">
+
+
+    <h2>距离高考还有<span id="time-left"> </span>天</h2>
+    <h2>你在哪里？ </h2>
+    <div class="row">
+      <div class="settings">
+        <p>
+          <span class="description">你的大学名称：</span>
+          <textarea id="bottom-text">野鸡大学WCU</textarea>
+        </p>
+
+        <p>
+          <span class="description">你的大学描述：</span>
+          <textarea id="top-text">的兄弟学校最喜欢招的</textarea>
+        </p>
+        <button class="button" id="generate">Generate</button>
+      </div>
+      <canvas id="meme-canvas"></canvas>
+    </div>
+    <div class="settings">
+      <p>玩腻了？想换个表情包背景？</p>
+    </div>
+    <input type="file" id="image-input" accept="image/*">
+    <button class="button" id="change">Change</button>
+    <script type="text/javascript" src="generator.js">
+
+    </script>
+  </body>
+</html>
