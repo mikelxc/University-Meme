@@ -1,3 +1,4 @@
+//Created by Xinchen Liu in 2018, for more informaiton visit https://github.com/mikelxc/University-Meme
 let topText, bottomText, imageInput, generateBtn, changeBtn, canvas, ctx, date1, dateNow, timeLeft, topDes, middleDes, bottomDes, defaultImg;
 
 function init () {
