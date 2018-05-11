@@ -20,9 +20,9 @@ function init () {
       let img = new Image;
       img.src = reader.result;
       generateMeme(img,"","","");
+      defaultImg.src = reader.result;
     };
     reader.readAsDataURL(imageInput.files[0]);
-    defaultImg.src = reader.result;
   });
 
 
