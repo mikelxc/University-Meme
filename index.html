@@ -26,7 +26,7 @@ If you want to see the code, help me with the development, or have any questions
       }
       .button {
         display: block;
-        margin: auto;
+        margin: 0 auto 2em;
         text-align: center;
        border-top: 1px solid #96d1f8;
        background: #65a9d7;
@@ -58,7 +58,8 @@ If you want to see the code, help me with the development, or have any questions
          margin: auto;
        }
        .settings textarea {
-         width:400px;
+         width: 80vw;
+         max-width:850px;
          height: 50px;
          margin-top: 50px;
        }
@@ -66,20 +67,38 @@ If you want to see the code, help me with the development, or have any questions
        .canvas_container {
         height: 100%;
         position: relative;
-        width: 100%;
+        width: 80%;
+        margin: auto;
       }
       .canvas_container canvas {
         height: 100%;
         position: relative;
-        width: 100%;
+        width: 90%;
         z-index: 1;
+        display: block;
+        margin: auto;
       }
       .canvas_mirror {
         height: 100%;
         left: 0;
         position: absolute;
         top: 0;
-        width: 100%;
+        width: 90%;
+        display: none;
+      }
+      .settings textarea {
+        font-size: 1em;
+      }
+      #btn-download {
+        display: none;
+      }
+      #image-input {
+        display: block;
+        margin: auto;
+        text-align: center;
+      }
+      @@media (max-width:) {
+
       }
     </style>
   </head>
@@ -91,6 +110,11 @@ If you want to see the code, help me with the development, or have any questions
 
     <h2>距离高考还有<span id="time-left"> </span>天</h2>
     <h2>你在哪里？ </h2>
+    <div class="canvas_container">
+      <canvas id="meme-canvas"></canvas>
+      <img src="" id="mirror" class="canvas_mirror" />
+    </div>
+    <a href="#" class="button" id="btn-download" download="myCollegeMeme.png">Download</a>
     <div class="row">
       <div class="settings">
         <p>
@@ -100,16 +124,12 @@ If you want to see the code, help me with the development, or have any questions
 
         <p>
           <span class="description">你的大学描述：</span>
-          <textarea id="top-text">的兄弟学校最喜欢招的</textarea>
+          <textarea id="top-text">的兄弟学校最喜欢的&#13;&#10;UWC&#13;&#10;的名字很像的</textarea>
         </p>
         <button class="button" id="generate">Generate</button>
       </div>
-      <div class="canvas_container">
-        <canvas id="meme-canvas"></canvas>
-        <img src="" id="mirror" class="canvas_mirror" />
-      </div>
+
     </div>
-    <a href="#" class="button" id="btn-download" download="myCollegeMeme.png">Download</a>
 
     <div class="settings">
       <p>玩腻了？想换个表情包背景？</p>
