@@ -9,6 +9,7 @@ function init () {
   generateBtn = document.getElementById("generate");
   changeBtn = document.getElementById("change");
   canvas = document.getElementById("meme-canvas");
+  mirror = document.getElementById('mirror');
 
   ctx = canvas.getContext("2d");
   canvas.width = canvas.height = 0;
@@ -27,6 +28,17 @@ function init () {
   generateBtn.addEventListener('click', function() {
     generateMeme(defaultImg, timeLeft, topText.value, bottomText.value);
   });
+
+    mirror.addEventListener('contextmenu', function (e) {
+      var dataURL = canvas.toDataURL('image/png');
+      mirror.src = dataURL;
+  });
+//download the picture
+    let downloadButton = document.getElementById('btn-download');
+    downloadButton.addEventListener('click', function (e) {
+        var dataURL = canvas.toDataURL('image/png');
+        downloadButton.href = dataURL;
+    });
 }
 
 function timeCalculation () {
@@ -38,8 +50,8 @@ function timeCalculation () {
 }
 
 function generateMeme (img = defaultImg, topDes = timeLeft, middleDes="的兄弟学校也看不起的", bottomDes="野鸡大学WCU") {
-  canvas.width =  img.width;
-  canvas.height = img.height;
+  canvas.width =  mirror.width = img.width;
+  canvas.height = mirror.width = img.height;
   ctx.clearRect(0,0,canvas.width, canvas.height);
   ctx.drawImage(img,0,0);
   let fontSize1 = 70/ topDes.length;

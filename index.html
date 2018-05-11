@@ -62,11 +62,25 @@ If you want to see the code, help me with the development, or have any questions
          height: 50px;
          margin-top: 50px;
        }
-       #image-input, #meme-canvas {
-         display: block;
-         text-align: center;
-         margin: 2em auto;
-       }
+
+       .canvas_container {
+        height: 100%;
+        position: relative;
+        width: 100%;
+      }
+      .canvas_container canvas {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+      }
+      .canvas_mirror {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
     </style>
   </head>
 
@@ -90,8 +104,13 @@ If you want to see the code, help me with the development, or have any questions
         </p>
         <button class="button" id="generate">Generate</button>
       </div>
-      <canvas id="meme-canvas"></canvas>
+      <div class="canvas_container">
+        <canvas id="meme-canvas"></canvas>
+        <img src="" id="mirror" class="canvas_mirror" />
+      </div>
     </div>
+    <a href="#" class="button" id="btn-download" download="myCollegeMeme.png">Download</a>
+
     <div class="settings">
       <p>玩腻了？想换个表情包背景？</p>
     </div>
